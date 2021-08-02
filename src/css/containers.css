@@ -1,0 +1,12 @@
+/*    Контейнеры    */
+#AppContainer {
+  font-size: 12px;
+  overflow: hidden;
+  position: absolute;
+  display: block;
+  left:0px;
+  top:0px;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+}
