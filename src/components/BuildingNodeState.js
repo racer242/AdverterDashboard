@@ -29,7 +29,7 @@ const useStyles = (theme) => ({
 
 
 
-class Status extends Component {
+class BuildingNodeState extends Component {
 
   constructor(props) {
     super(props);
@@ -102,4 +102,4 @@ class Status extends Component {
   }
 
 }
-export default withStyles(useStyles, { withTheme: true })(Status);
+export default withStyles(useStyles, { withTheme: true })(BuildingNodeState);

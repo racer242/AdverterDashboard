@@ -47,12 +47,12 @@ class DataManager extends Component {
     xobj.overrideMimeType("application/json");
     xobj.open('GET', fileName, true);
     xobj.onreadystatechange = function () {
-          if (xobj.readyState === 4 && xobj.status === 200) {
-            callback(xobj.responseText,null);
-          } else
-          if (xobj.status !== 200) {
-            callback(xobj.responseText,xobj);
-          }
+      if (xobj.readyState === 4 && xobj.status === 200) {
+        callback(xobj.responseText,null);
+      } else
+      if (xobj.status !== 200) {
+        callback(xobj.responseText,xobj);
+      }
     };
     xobj.send(null);
   }
@@ -93,7 +93,7 @@ class DataManager extends Component {
         isLoaded:false,
       }
     )
-    this.loadJSON(settings.adverterSource,(data,error) => {
+    this.loadJSON(settings.source,(data,error) => {
       if (error) {
         this.onDataLoadError(error);
       } else {

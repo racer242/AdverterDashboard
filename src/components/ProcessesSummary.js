@@ -8,31 +8,27 @@ import TableRow from '@material-ui/core/TableRow';
 
 import numbro from 'numbro';
 
-export default function ProcessState(props) {
+export default function ProcessesSummary(props) {
   return (
     <React.Fragment>
       <Title>{props.title}</Title>
       <Table size="small">
         <TableBody>
           <TableRow>
-            <TableCell>IP адрес</TableCell>
-            <TableCell>{(props.address)?props.address:"Недоступно"}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Идентификатор процесса</TableCell>
-            <TableCell>{(props.pid)?props.pid:"Недоступно"}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Загрузка процессора</TableCell>
+            <TableCell>Общая загрузка процессора</TableCell>
             <TableCell>{(props.cpu)?numbro(props.cpu).format({mantissa: 2})+"%":"Недоступно"}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Загрузка памяти, Мб</TableCell>
+            <TableCell>Общая загрузка памяти, Мб</TableCell>
             <TableCell>{(props.memory)?numbro(props.memory).format({output: "byte",base:"decimal",thousandSeparated: true, mantissa: 2, spaceSeparated: true}):"Недоступно"}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Время от старта, сек</TableCell>
-            <TableCell>{(props.elapsed)?numbro(props.elapsed/1000).format({output: "time"}):"Недоступно"}</TableCell>
+            <TableCell>Минимальное время от старта, сек</TableCell>
+            <TableCell>{(props.elapsedMin)?numbro(props.elapsedMin/1000).format({output: "time"}):"Недоступно"}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Максимальное время от старта, сек</TableCell>
+            <TableCell>{(props.elapsedMax)?numbro(props.elapsedMax/1000).format({output: "time"}):"Недоступно"}</TableCell>
           </TableRow>
         </TableBody>
       </Table>

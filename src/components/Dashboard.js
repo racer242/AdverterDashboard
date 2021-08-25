@@ -30,6 +30,7 @@ import Status from './Status';
 import Camps from './Camps';
 import Fonts from './Fonts';
 import Log from './Log';
+import BuildingNodes from './BuildingNodes';
 
 const drawerWidth = 220;
 const useStyles = (theme) => ({
@@ -253,7 +254,7 @@ class Dashboard extends Component {
               </ListItemIcon>
               <ListItemText primary="Лог" />
             </ListItem>
-            <ListItem button onClick={()=>{this.setSection("builders")}}>
+            <ListItem button onClick={()=>{this.setSection("nodes")}}>
               <ListItemIcon>
                 <StorageIcon />
               </ListItemIcon>
@@ -271,6 +272,7 @@ class Dashboard extends Component {
                         <Container maxWidth="lg" className={classes.container}>
                           <Status
                             process={this.state.process}
+                            address={this.state.address}
                             performance={this.state.performance}
                             builders={this.state.builders}
                             tasks={this.state.tasks}
@@ -301,6 +303,15 @@ class Dashboard extends Component {
                         <Container maxWidth="lg" className={classes.containerStretched}>
                           <Log
                             log={this.state.log}
+                          />
+                        </Container>
+                      );
+                    }
+                    case "nodes": {
+                      return (
+                        <Container maxWidth="lg" className={classes.containerStretched}>
+                          <BuildingNodes
+                            nodes={this.state.building}
                           />
                         </Container>
                       );

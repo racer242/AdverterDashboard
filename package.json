@@ -6,7 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "singlepage": "react-app-singlehtml build/index.html dist/dashboard.html"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.2",
@@ -19,6 +20,7 @@
     "numbro": "^2.3.2",
     "path": "^0.12.7",
     "react": "latest",
+    "react-app-singlehtml": "^1.0.5",
     "react-dom": "latest",
     "react-redux": "^7.2.4",
     "react-scripts": "latest",
